@@ -1,0 +1,5 @@
+/our-club             /about     301
+/meet-the-bowlers     /team      301
+/meet-the-bowlers/*   /team      301
+/volunteer            /contact   301
+/*                    /index.html  200

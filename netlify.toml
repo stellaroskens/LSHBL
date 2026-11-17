@@ -1,0 +1,35 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old public paths from the previous site that now lives at this domain.
+[[redirects]]
+  from = "/our-club"
+  to = "/about"
+  status = 301
+
+[[redirects]]
+  from = "/meet-the-bowlers"
+  to = "/team"
+  status = 301
+
+[[redirects]]
+  from = "/meet-the-bowlers/*"
+  to = "/team"
+  status = 301
+
+[[redirects]]
+  from = "/volunteer"
+  to = "/contact"
+  status = 301
+
+# Direct navigation must serve the React app. Keep this last.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Response headers live in public/_headers so a manual upload of dist/ includes them.
