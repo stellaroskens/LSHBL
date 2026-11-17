@@ -48,22 +48,17 @@ export function Header() {
         </button>
 
         <NavLink className="brand" to="/" end onClick={() => setOpen(false)}>
-          <span className="brand__mark" aria-hidden="true">
-            LS
-          </span>
-          <span>
-            <strong>{organization.abbreviation}</strong>
-            <small>{organization.name}</small>
-          </span>
+          <img src="/brand/lshbl-logo-square.webp" alt="" width={48} height={48} />
+          <span className="visually-hidden">{organization.name}</span>
         </NavLink>
 
         <SiteSearch />
 
         <div className="header-actions">
-          <NavLink className="button button--red" to="/donate" onClick={() => setOpen(false)}>
+          <NavLink className="button button--red header-donate" to="/donate" onClick={() => setOpen(false)}>
             Donate
           </NavLink>
-          <NavLink className="button button--navy" to="/sign-in" onClick={() => setOpen(false)}>
+          <NavLink className="button header-signin" to="/sign-in" onClick={() => setOpen(false)}>
             Sign In
           </NavLink>
         </div>

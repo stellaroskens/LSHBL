@@ -2,8 +2,8 @@
 
 These items were not invented.
 
-1. Official horizontal and square logos were not attached to the build. The temporary letter mark should be replaced with the real files.
-2. Official contact email, phone, and social accounts.
+1. Official horizontal and square logos are now on the site. Separate school crests were not in the supplied files.
+2. The fundraiser mockup prints `bowling@lebanonsh.org`. That domain does not resolve, so the site does not use it. An official email, phone, and social accounts are still needed.
 3. Whether Linn Lanes has agreed to host practices and events. The banner uses the requested partner sentence, and the practices page says the schedule is unpublished.
 4. Eligibility, fees, roster, coaches, and practice times.
 5. Approved payment method, check instructions, and any claim of nonprofit or school status.

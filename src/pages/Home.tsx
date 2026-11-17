@@ -18,6 +18,13 @@ export function Home() {
       />
       <section className="hero">
         <div className="hero__ribbons" aria-hidden="true" />
+        <img
+          className="hero-logo"
+          src="/brand/lshbl-logo-horizontal.webp"
+          alt="Lebanon and Sweet Home bowling logo"
+          width={280}
+          height={280}
+        />
         <p className="kicker">Lebanon & Sweet Home, Oregon</p>
         <h1>Two schools. One league. One community.</h1>
         <p className="hero__support">Help us build the future of high school bowling.</p>

@@ -7,6 +7,7 @@ export function Footer() {
     <footer className="site-footer">
       <div className="footer-grid">
         <div>
+          <img className="footer-logo" src="/brand/lshbl-logo-square.webp" alt="" width={88} height={88} />
           <p className="footer-mark">{organization.abbreviation}</p>
           <p className="footer-name">{organization.name}</p>
           <p>{organization.mission}</p>

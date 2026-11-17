@@ -1,52 +1,76 @@
 import { Link } from "react-router-dom"
 import { organization } from "../brand/organization"
-import { PageHero } from "../components/PageHero"
 import { PageMeta } from "../components/PageMeta"
 
-const templates = [
-  { title: "Community bowling events", text: "A public bowling night with a date, a center, and instructions." },
-  { title: "Bowl-a-Thons", text: "Flat gifts or per-pin pledges, calculated only after pins are verified." },
-  { title: "Business partnerships", text: "A restaurant or shop night, posted only when the business and the date are confirmed." },
-  { title: "Approved raffles", text: "Ticket sales stay off until authorization and compliance review are complete." },
-  { title: "Donation campaigns", text: "A described need, without a payment form on this site." },
-]
+const lanes = organization.linnLanes
 
 export function Fundraisers() {
   return (
     <>
       <PageMeta
         title={`Fundraisers | ${organization.abbreviation}`}
-        description="No LSHBL fundraiser is scheduled. Future events will be posted with a real date and location."
+        description="No Lebanon and Sweet Home bowling fundraiser is scheduled. The page is ready for a future community event."
       />
-      <PageHero
-        kicker="Community support"
-        title="Fundraisers"
-        lede="No fundraiser is currently scheduled. When one is, this page will show the date, the place, and how to take part."
-      />
-      <section className="wrap empty-banner">
-        <h2>The lanes are open for a future event.</h2>
-        <p>
-          Design references for raffles and flyers are not live campaigns. Dates, codes, and QR codes from those
-          mockups are not published here.
-        </p>
-        <Link className="button button--red" to="/donate">
-          Donation information
-        </Link>
-      </section>
-      <section className="wrap">
-        <h2>Event types this page can hold</h2>
-        <div className="card-grid">
-          {templates.map((item) => (
-            <article className="panel" key={item.title}>
-              <h3>{item.title}</h3>
-              <p>{item.text}</p>
-            </article>
-          ))}
+      <header className="fund-hero">
+        <div>
+          <p className="fund-hero__pill">Support the team</p>
+          <h1>Fundraisers</h1>
+          <p className="fund-hero__status">No event is scheduled</p>
+          <p>Lebanon & Sweet Home High School Bowling Team</p>
+          <a className="button button--red" href={lanes.url}>
+            Linn Lanes
+          </a>
         </div>
-      </section>
-      <section className="wrap prose">
-        <h2>Volunteers</h2>
-        <p>Volunteer roles for a future event are not assigned yet. {organization.name} will describe them with the event.</p>
+        <img src="/brand/lshbl-logo-square.webp" alt="" width={220} height={220} />
+      </header>
+
+      <section className="wrap fund-layout">
+        <figure className="flyer-card">
+          <img src="/brand/lshbl-logo-square.webp" alt="Lebanon and Sweet Home bowling logo" width={280} height={280} />
+          <figcaption>
+            <strong>A flyer will go here when an event is real.</strong>
+            The raffle layout in the design reference is not an upcoming event. Its date, participation code, and QR
+            code are not published.
+          </figcaption>
+        </figure>
+
+        <div className="fund-detail">
+          <div className="date-badge" aria-label="Event date">
+            <span>Date</span>
+            <strong>TBA</strong>
+          </div>
+          <div>
+            <h2>Community fundraiser</h2>
+            <p>Waiting for a confirmed date, time, and host.</p>
+          </div>
+          <p>Nothing is scheduled for the Lebanon & Sweet Home High School Bowling Team.</p>
+
+          <div className="info-grid">
+            <article className="panel">
+              <h3>Location</h3>
+              <p>{lanes.name}</p>
+              <p>{lanes.address}</p>
+            </article>
+            <article className="panel">
+              <h3>How to participate</h3>
+              <p>Instructions will be posted with a confirmed event. No ticket code is active.</p>
+            </article>
+          </div>
+
+          <div className="fund-actions">
+            <p>Can't make it? No problem — you can still support the team.</p>
+            <Link className="button button--red" to="/donate">
+              Donate now
+            </Link>
+          </div>
+
+          <section className="volunteer-card">
+            <h3>Volunteers</h3>
+            <p>When an event is scheduled, the league can ask for help with setup, guests, and cleanup.</p>
+            <p>Students, parents, and families are welcome to ask about volunteering. Roles are not assigned yet.</p>
+            <p>An official email address has not been published, so this page does not show a contact button for a guessed inbox.</p>
+          </section>
+        </div>
       </section>
     </>
   )

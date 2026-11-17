@@ -51,9 +51,9 @@ a:hover { color: var(--lebanon-red); }
   position: sticky;
   top: 0;
   z-index: 5;
-  background: rgba(255, 255, 255, 0.96);
+  background: var(--midnight-navy);
   border-bottom: 4px solid var(--lebanon-red);
-  box-shadow: 0 8px 24px rgba(6, 28, 66, 0.06);
+  box-shadow: 0 8px 24px rgba(6, 28, 66, 0.2);
 }
 
 .header-bar {
@@ -68,10 +68,14 @@ a:hover { color: var(--lebanon-red); }
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  color: var(--midnight-navy);
   text-decoration: none;
-  min-width: 0;
+}
+.brand img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  background: var(--white);
+  border-radius: 0.45rem;
 }
 .brand strong {
   display: block;
@@ -104,17 +108,21 @@ a:hover { color: var(--lebanon-red); }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border: 1px solid var(--line);
-  background: var(--white);
+  border: 0;
+  background: transparent;
+  color: var(--white);
   border-radius: 999px;
-  padding: 0.45rem 0.8rem;
+  padding: 0.45rem 0.2rem;
   cursor: pointer;
+  font-family: var(--display);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 .menu-button__bars {
   width: 1rem;
   height: 2px;
-  background: var(--midnight-navy);
-  box-shadow: 0 -5px 0 var(--midnight-navy), 0 5px 0 var(--midnight-navy);
+  background: var(--white);
+  box-shadow: 0 -5px 0 var(--white), 0 5px 0 var(--white);
 }
 
 .site-menu {
@@ -143,10 +151,10 @@ a:hover { color: var(--lebanon-red); }
 .search { position: relative; margin-left: auto; flex: 1; max-width: 240px; }
 .search input {
   width: 100%;
-  border: 1px solid var(--line);
+  border: 0;
   border-radius: 999px;
-  padding: 0.5rem 0.9rem;
-  background: var(--ice);
+  padding: 0.55rem 0.9rem;
+  background: var(--white);
 }
 .search__results {
   position: absolute;
@@ -196,7 +204,7 @@ a:hover { color: var(--lebanon-red); }
 .button--white { background: var(--white); color: var(--lebanon-red); }
 .button:active { transform: translateY(1px); }
 
-.hero, .page-hero, .support-hero {
+.hero, .page-hero, .support-hero, .fund-hero {
   position: relative;
   overflow: hidden;
   color: var(--white);
@@ -205,8 +213,8 @@ a:hover { color: var(--lebanon-red); }
     linear-gradient(115deg, var(--midnight-navy), var(--lebanon-blue) 48%, var(--sweet-home-green));
   padding: clamp(2.5rem, 7vw, 5.5rem) 1.25rem;
 }
-.hero, .support-hero { padding-left: max(1.25rem, calc((100% - var(--max)) / 2)); padding-right: max(1.25rem, calc((100% - var(--max)) / 2)); }
-.hero h1, .page-hero h1, .support-hero h1 {
+.hero, .support-hero, .fund-hero { padding-left: max(1.25rem, calc((100% - var(--max)) / 2)); padding-right: max(1.25rem, calc((100% - var(--max)) / 2)); }
+.hero h1, .page-hero h1, .support-hero h1, .fund-hero h1 {
   font-family: var(--display);
   font-style: italic;
   font-weight: 700;
@@ -426,6 +434,108 @@ summary { cursor: pointer; font-weight: 700; }
   .search { order: 5; max-width: none; flex-basis: 100%; margin-left: 0; }
   .lanes-banner { grid-template-columns: 1fr; }
   .brand small { display: none; }
+}
+
+.header-signin {
+  background: transparent;
+  color: var(--white);
+  border: 2px solid var(--white);
+}
+.header-signin:hover { color: var(--midnight-navy); background: var(--white); }
+.hero-logo, .footer-logo { object-fit: contain; background: transparent; }
+.hero-logo { width: min(280px, 70vw); height: auto; margin-bottom: 0.4rem; }
+.footer-logo { width: 88px; height: 88px; background: var(--white); border-radius: 0.6rem; }
+
+.support-hero--logo, .fund-hero {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.2rem;
+  align-items: center;
+}
+.support-hero--logo img, .fund-hero img {
+  width: min(180px, 34vw);
+  height: auto;
+  background: var(--white);
+  border-radius: 1rem;
+}
+.choice-grid, .sponsor-split, .fund-layout, .info-grid, .recognition-grid {
+  display: grid;
+  gap: 1rem;
+}
+.choice-grid, .sponsor-split, .fund-layout { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.recognition-grid { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.choice, .recognition, .flyer-card, .volunteer-card {
+  border-radius: 1rem;
+  padding: 1.1rem;
+  box-shadow: var(--shadow);
+}
+.choice--team { background: var(--white); }
+.choice--bowler { background: var(--sweet-home-gold); color: var(--midnight-navy); }
+.choice__soon { font-weight: 700; }
+.recognition--private { background: #e8f6ee; }
+.recognition--shirt { background: #fff4f4; }
+.recognition--home { background: #e7f0ff; }
+.recognition__amount {
+  font-family: var(--display);
+  font-size: 1.8rem;
+  margin: 0.2rem 0;
+}
+.recognition-title {
+  background: var(--sweet-home-green);
+  color: var(--white);
+  display: inline-block;
+  padding: 0.35rem 0.7rem;
+  border-radius: 0.4rem;
+}
+.fund-hero { align-items: center; }
+.fund-hero__pill, .fund-hero__status {
+  font-family: var(--display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.fund-hero__pill {
+  display: inline-block;
+  background: var(--lebanon-red);
+  color: var(--white);
+  border-radius: 999px;
+  padding: 0.2rem 0.7rem;
+}
+.fund-hero__status { color: var(--sweet-home-gold); font-size: clamp(1.4rem, 3vw, 2.2rem); margin: 0; }
+.flyer-card {
+  background: var(--midnight-navy);
+  color: var(--white);
+  text-align: center;
+}
+.flyer-card img { width: min(280px, 80%); height: auto; }
+.date-badge {
+  display: inline-grid;
+  width: max-content;
+  justify-self: start;
+  justify-items: center;
+  background: var(--lebanon-red);
+  color: var(--white);
+  border-radius: 0.8rem;
+  padding: 0.55rem 0.8rem;
+  font-family: var(--display);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.date-badge strong { font-size: 1.8rem; line-height: 1; }
+.fund-detail { display: grid; gap: 0.8rem; align-content: start; }
+.fund-actions, .volunteer-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--white);
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+}
+.volunteer-card { display: block; background: #fff1f3; }
+
+@media (max-width: 720px) {
+  .support-hero--logo, .fund-hero { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {
