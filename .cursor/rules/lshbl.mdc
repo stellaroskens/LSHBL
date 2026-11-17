@@ -1,0 +1,15 @@
+---
+description: LSHBL repository boundaries, student privacy, and payment safety.
+alwaysApply: true
+---
+
+# LSHBL
+
+This repository is only for the Lebanon & Sweet Home High School Bowling League.
+
+- Do not commit to or push the WAHSB repository. Do not copy its Git history, secrets, student records, coach photos, or payment destinations.
+- Do not publish student names, photos, scores, or guardian records.
+- Do not invent sponsors, donations, events, fees, eligibility rules, or a contact email.
+- Do not enable checkout, raffle sales, or a login until the league approves that system.
+- Official logo files replace the temporary wordmark. Do not redraw or recolor supplied logo artwork.
+- Public copy stays in `src/brand/organization.ts` instead of being repeated.

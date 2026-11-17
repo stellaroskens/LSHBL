@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin
+Disallow: /sign-in
+
+Sitemap: https://lshbl.netlify.app/sitemap.xml
